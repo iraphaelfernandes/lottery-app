@@ -25,7 +25,10 @@ A Next.js application for analyzing Brazilian lottery games and generating numbe
 
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/iraphaelfernandes/lottery-app.git
+
+# Navigate to the project directory
+cd lottery-app
 
 # Install dependencies
 npm install

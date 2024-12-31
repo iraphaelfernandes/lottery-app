@@ -1,9 +1,9 @@
 'use client';
-// src/components/lottery/LotteryAnalyzer.tsx
 import { useState } from 'react';
 import { GameSelector } from './GameSelector';
 import { NumberAnalysis } from './NumberAnalysis';
 import { GameGenerator } from './GameGenerator';
+import { WinnerAnalysis } from './WinnerAnalysis';
 import { LotteryGame, LotteryResult } from '@/types/lottery';
 
 export function LotteryAnalyzer() {
@@ -17,11 +17,12 @@ export function LotteryAnalyzer() {
         onResultLoad={setLotteryResult}
       />
 
-      {lotteryResult && (
+      {lotteryResult && selectedGame && (
         <>
           <NumberAnalysis result={lotteryResult} />
+          <WinnerAnalysis gameType={selectedGame} />
           <GameGenerator
-            gameType={selectedGame!}
+            gameType={selectedGame}
             frequencyData={lotteryResult.dezenas}
           />
         </>
